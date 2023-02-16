@@ -2,6 +2,8 @@
 
 This is a library app that allows the user to store books in a library. The app was built using HTML, CSS, and JavaScript. The app was completed as part of the curriculum for The Odin Project, an open-source web development curriculum.
 
+[Live Preview](https://zachmhamilton.github.io/Library/)
+
 ## Usage
 
 To use the app, simply fill out the form with the book's title, author, number of pages, and whether or not you have read the book. Once you submit the form, the book will be added to your library and displayed on the page.
