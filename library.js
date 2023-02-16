@@ -12,22 +12,52 @@ function Book(title, author, pages, read) {
     }
 }
 
-var GameOfThrones = new Book("Game of Thrones", "J.R" , "1000", "read");
+// Populating library
+var GameOfThrones = new Book("Game of Thrones", "J.R" , "1000", "on");
 myLibrary.push(GameOfThrones);
 
+
+
+
+
+
+
+
+
 //function that prompts user to add book
-function addBook() {
-    let title = prompt("Title:")
-    let author = prompt("Author:")
-    let pages = prompt("Pages:")
-    let read = prompt("Read or Not Read:")
-    let newBook = new Book(title, author, pages, read)
-    myLibrary.push(newBook);
+function addBook(event) {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const read = document.getElementById("read").value;
+
+    var book = new Book(title, author, pages, read);
+
+    myLibrary.push(book);
+    document.getElementById("form-container").style.display = "none";
+    document.getElementById("form").reset();
+
 }
 
-const list = document.querySelector("#list");
+// Shows form after pressing 'Add Book' button
+function showForm () {
+    document.getElementById("form-container").style.display = "block";
+}
+
+
+// Event listeners to show form and form submission
+const addbtn = document.getElementById("addbtn");
+addbtn.addEventListener("click", showForm);
+
+const form = document.getElementById("form");
+form.addEventListener("submit", addBook);
+
+
 
 // function to display items as unordered list
+const list = document.querySelector("#list");
+
 function displayItems() {
 myLibrary.forEach((item) => {
     let li = document.createElement('li');
@@ -37,15 +67,3 @@ myLibrary.forEach((item) => {
 });
 }
 
-// function to display form after clicking 'add book' button
-const btn = document.querySelector("#btn") 
-const form = document.querySelector("#form");
-form.style.display = 'none';
-btn.addEventListener('click', () => {
-    if (form.style.display === 'none') {
-        form.style.display = 'block';
-    }
-    else {
-        form.style.display = 'none';
-    }
-})
