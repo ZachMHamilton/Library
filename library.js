@@ -46,24 +46,47 @@ function showForm () {
 }
 
 
-// Event listeners to show form and form submission
+// Event listeners to show form and display books after form submission
 const addbtn = document.getElementById("addbtn");
 addbtn.addEventListener("click", showForm);
 
 const form = document.getElementById("form");
-form.addEventListener("submit", addBook);
-
-
-
-// function to display items as unordered list
-const list = document.querySelector("#list");
-
-function displayItems() {
-myLibrary.forEach((item) => {
-    let li = document.createElement('li');
-    li.textContent = item.title;
-    list.appendChild(li);
-
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    addBook(event);
+    displayItems();
 });
-}
+
+
+
+// function to display items 
+function displayItems() {
+    const bookContainer = document.getElementById("book-container");
+    bookContainer.innerHTML = "";
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        var book = myLibrary[i];
+        var bookElement = document.createElement("div");
+
+        var titleElement = document.createElement("h2");
+        titleElement.textContent = book.title;
+
+        var authorElement = document.createElement("p");
+        authorElement.textContent = "Author: " + book.author;
+
+        var pagesElement = document.createElement("p");
+        pagesElement.textContent = "Pages: " + book.pages;
+
+        var readElement = document.createElement("p");
+        readElement.textContent = book.read ? "Read" : "Not Read";
+
+        bookElement.appendChild(titleElement);
+        bookElement.appendChild(authorElement);
+        bookElement.appendChild(pagesElement);
+        bookElement.appendChild(readElement);
+
+        bookContainer.appendChild(bookElement);
+    }
+};
+
 

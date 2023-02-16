@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    border: 1px solid black;
+    height: 100%;
+}
+
+#book-container {
+    flex: 1;
+    border: 1px solid black;
+    height: 100%;
+}
+
+#btncontainer {
+    flex: 1;
+    border: 1px solid black;
+    height: 100%;
+}
