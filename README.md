@@ -1,6 +1,6 @@
 # Library App
 
-This is a simple library app that allows users to add books to their library and mark them as read or not read. The app was built using HTML, CSS, and JavaScript. The app was completed as part of the curriculum for The Odin Project, an open-source web development curriculum.
+This is a library app that allows the user to store books in a library. The app was built using HTML, CSS, and JavaScript. The app was completed as part of the curriculum for The Odin Project, an open-source web development curriculum.
 
 ## Usage
 
