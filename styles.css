@@ -56,8 +56,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 #book-container {
     flex-grow: 3;
     background-color: lightblue;

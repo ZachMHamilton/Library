@@ -1,5 +1,5 @@
+// create library array
 let myLibrary = [];
-
 
 // object constructor
 function Book(title, author, pages, read) {
@@ -7,22 +7,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = Boolean(read);
-    this.info = function (){
-        return (title + " by " + author + ", " + pages + " pages, " + read)
-    }
 }
-
-// Populating library
-//var GameOfThrones = new Book("Game of Thrones", "J.R" , "1000", "on");
-//myLibrary.push(GameOfThrones);
-
-
-
-
-
-
-
-
 
 //function that prompts user to add book
 function addBook(event) {
@@ -41,7 +26,7 @@ function addBook(event) {
 
 }
 
-// Shows form after pressing 'Add Book' button
+// Shows form after pressing 'Add Book' button and hides button while form is active
 function showForm () {
     document.getElementById("form-container").style.display = "block";
     document.getElementById("addbtn").style.display = "none";
