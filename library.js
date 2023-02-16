@@ -13,8 +13,8 @@ function Book(title, author, pages, read) {
 }
 
 // Populating library
-var GameOfThrones = new Book("Game of Thrones", "J.R" , "1000", "on");
-myLibrary.push(GameOfThrones);
+//var GameOfThrones = new Book("Game of Thrones", "J.R" , "1000", "on");
+//myLibrary.push(GameOfThrones);
 
 
 
@@ -37,12 +37,14 @@ function addBook(event) {
     myLibrary.push(book);
     document.getElementById("form-container").style.display = "none";
     document.getElementById("form").reset();
+    document.getElementById("addbtn").style.display = "block";
 
 }
 
 // Shows form after pressing 'Add Book' button
 function showForm () {
     document.getElementById("form-container").style.display = "block";
+    document.getElementById("addbtn").style.display = "none";
 }
 
 
