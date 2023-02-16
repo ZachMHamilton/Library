@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.read = Boolean(read);
     this.info = function (){
         return (title + " by " + author + ", " + pages + " pages, " + read)
     }
@@ -30,7 +30,7 @@ function addBook(event) {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
-    const read = document.getElementById("read").value;
+    const read = document.getElementById("read").checked;
 
     var book = new Book(title, author, pages, read);
 
